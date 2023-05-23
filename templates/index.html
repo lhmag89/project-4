@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8" />
+	<title> Breast Cancer Machine Learning Classification</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 jumbotron text-center">
+            <h1>Breast Cancer Machine Learning Classification</h1>
+          </div>
+        </div>
+        <div class="row">
+            <!-- <div class="col-md-3">
+              <div class="well">
+                  <h4>Select y-axis:</h4>
+                  <select id="selDatasety" onchange="optionChanged(this.value)"></select>
+              </div>
+            </div> -->
+          <div class="col-md-8">
+            <div class="well">
+                <h3>Features Description</h3>
+                <ul>
+                  <li><strong>concave points_mean: </strong>the average count of the number of points on the nuclear border that lie on an indenation for all nuclei</li>
+                  <li><strong>radius_worst: </strong>the mean averaged length of radial line segments from the center of the nuclear mass to each of the points of the nuclear border for the three largest nuclei</li>
+                  <li><strong>perimeter_worst: </strong>mean distance around the nuclear border for the largerst three nuclei</li>
+                  <li><strong>area_worst: </strong> mean area within the outlined nuclear border for the three largest nuclei</li>
+                  <li><strong>concavity_worst: </strong>mean severity of concave portions on the contour for the three largest nuclei</li>
+                </ul>
+                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="well">
+              <form action="{{ url_for('predict')}}"method="post">
+                <input type="text" name="feat1" placeholder="concave points_mean" required="required" />
+                <input type="text" name="feat2" placeholder="radius_worst" required="required" />
+                <input type="text" name="feat3" placeholder="perimeter_worst" required="required" />
+                <input type="text" name="feat4" placeholder="area_worst" required="required" />
+                <input type="text" name="feat5" placeholder="concavity_worst" required="required" />
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+              </form>
+              <h4>{{prediction_text}}</h4>
+            </div>
+          </div>
+        </div>
+       <!-- <div class="row">ß
+          <div class="col-md-6">
+            <div id="scatter"></div>
+          </div>
+          <div class="col-md-6">
+            <div id="chartContainer" style="height: 450px; width: 100%"></div>
+          </div>
+        </div> -->
+        <!-- <div class="row">
+            <div class="col-md-12">
+              <h4>{{prediction_text}}</h4>
+            </div>
+        </div> -->
+        <!-- <div class="row">
+          <div class="col-md-12">
+            <div id="map"></div>
+          </div>
+        </div> -->
+      </div>
+  <!-- <script src="static/js/logic.js"></script> -->
+</body>
+</html>
