@@ -1,5 +1,7 @@
 html,
-body,
+body {background-color: lavenderblush;
+  background-image: url("breast-cancer-awareness-ribbon.jpg");
+},
 #map {
   height: 600px;
   width: 100%;
@@ -28,3 +30,18 @@ background-image: linear-gradient(rgb(0, 0, 0), rgb(87, 87, 112));
   margin-right: 8px;
   opacity: 0.75;
 }
+
+#pink{
+  font-family: 'Sans Serif'
+  font-color: #A0435F;
+  }
+
+  #image{
+    background-image: url("breast-cancer-awareness-ribbon.jpg"); 
+    font-family: 'Playfair Display'
+  font-color: white;
+	font-size: 40px;
+	#-webkit-text-stroke-width: 2px;
+   # -webkit-text-stroke-color: black;
+  }
+
