@@ -10,18 +10,11 @@
 
     <div class="container">
         <div class="row">
-          <div class="col-md-12 jumbotron text-center" id="image">
-            <img class="img-responsive" id="image">
+          <div class="col-md-12 jumbotron text-center" id="pink">
             <h1>Predictive Diagnostic Assistant for Breast Cancer Screening</h1>
           </div>
         </div>
         <div class="row">
-            <!-- <div class="col-md-3">
-              <div class="well">
-                  <h4>Select y-axis:</h4>
-                  <select id="selDatasety" onchange="optionChanged(this.value)"></select>
-              </div>
-            </div> -->
           <div class="col-md-12">
             <div class="well">
                 <h3><b>About the Tool</b></h3>
@@ -33,19 +26,7 @@
                 </h4>
                 </div>
           </div>
-          <div class="col-md-8">
-            <div class="well">
-                <h3><b>Features Description</b></h3>
-                <ul>
-                  <li><strong>concave points_mean: </strong>the average count of the number of points on the nuclear border that lie on an indenation for all nuclei</li>
-                  <li><strong>radius_worst : </strong>the mean averaged length of radial line segments from the center of the nuclear mass to each of the points of the nuclear border for the three largest nuclei</li>
-                  <li><strong>perimeter_worst: </strong>mean distance around the nuclear border for the largerst three nuclei</li>
-                  <li><strong>area_worst: </strong> mean area within the outlined nuclear border for the three largest nuclei</li>
-                  <li><strong>concavity_worst: </strong>mean severity of concave portions on the contour for the three largest nuclei</li>
-                </ul>
-                </div>
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div class="well">
               <h3><b>Input Feature Data</b></h3>
               <form action="{{ url_for('predict')}}"method="post">
@@ -64,26 +45,37 @@
               <h4>{{prediction_text}}</h4>
             </div>
           </div>
+          <div class="col-md-9">
+            <div class="well">
+                <h3><b>Features Description</b></h3>
+                <p>Source: <a href="https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)">https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)</a></p>  
+                <ul>
+                  <li><strong>concave points_mean: </strong>the average count of the number of points on the nuclear border that lie on an indenation for all nuclei</li>
+                  <li><strong>radius_worst : </strong>the mean averaged length of radial line segments from the center of the nuclear mass to each of the points of the nuclear border for the three largest nuclei</li>
+                  <li><strong>perimeter_worst: </strong>mean distance around the nuclear border for the largerst three nuclei</li>
+                  <li><strong>area_worst: </strong> mean area within the outlined nuclear border for the three largest nuclei</li>
+                  <li><strong>concavity_worst: </strong>mean severity of concave portions on the contour for the three largest nuclei</li>
+                </ul>
+                </div>
+          </div>
         </div>
-       <!-- <div class="row">ß
+        <div class="row">
+          <div class="col-md-3">
+            <div class="well">
+              <h4>Explore the Full Dataset</h4>
+              <h5>Select y-axis:</h5>
+              <select id="selDatasety" onchange="optionChanged(this.value)"></select>
+              <h5>Select x-axis:</h5>
+              <select id="selDatasetx" onchange="optionChanged(this.value)"></select>
+            </div>
+          </div>
           <div class="col-md-6">
             <div id="scatter"></div>
           </div>
-          <div class="col-md-6">
-            <div id="chartContainer" style="height: 450px; width: 100%"></div>
-          </div>
-        </div> -->
-        <!-- <div class="row">
-            <div class="col-md-12">
-              <h4>{{prediction_text}}</h4>
-            </div>
-        </div> -->
-        <!-- <div class="row">
-          <div class="col-md-12">
-            <div id="map"></div>
-          </div>
-        </div> -->
+        </div>
       </div>
-  <!-- <script src="static/js/logic.js"></script> -->
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+      <script src="static/js/logic.js"></script> 
 </body>
 </html>

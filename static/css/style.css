@@ -1,47 +1,28 @@
 html,
 body {background-color: lavenderblush;
-  background-image: url("breast-cancer-awareness-ribbon.jpg");
-},
-#map {
-  height: 600px;
-  width: 100%;
-  padding: 0;
-  margin: 0;
 }
-#spacer {
-  height: 20px;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
 .container {
-background-image: linear-gradient(rgb(0, 0, 0), rgb(87, 87, 112));
+  background-image: url("breast-cancer-awareness-ribbon.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
-.legend {
-  line-height: 18px;
-  color: #555;
-  background-color: white;
+.well {
+  background-color: #E0B0D5;
 }
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.75;
-}
-
 #pink{
-  font-family: 'Sans Serif'
-  font-color: #A0435F;
+  font-family: 'Sans Serif';
+  background-color: lavenderblush;
   }
 
-  #image{
-    background-image: url("breast-cancer-awareness-ribbon.jpg"); 
-    font-family: 'Playfair Display'
-  font-color: white;
+#image{
+  background-image: url("breast-cancer-awareness-ribbon.jpg"); 
+  font-family: 'Playfair Display';
+  color: white;
 	font-size: 40px;
-	#-webkit-text-stroke-width: 2px;
-   # -webkit-text-stroke-color: black;
-  }
+  -webkit-text-stroke: 1px black;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 
