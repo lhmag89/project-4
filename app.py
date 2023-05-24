@@ -2,9 +2,13 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
 import pickle
+import sqlalchemy as sql
 
 #create flask app
 flask_app = Flask(__name__)
+
+#get sqlitedb
+engine=sql.create_engine('sqlite:///data/DataBase.sqlite')
 
 # load the model
 model = pickle.load(open("model.pkl","rb"))
@@ -12,6 +16,15 @@ scaler = pickle.load(open("scaler.pkl","rb"))
 @flask_app.route("/")
 def Home():
     return render_template("index.html")
+
+# Points the to the directions of the data source
+@flask_app.route('/data')
+def other_data(): 
+    results=engine.execute('select * from data').all()
+    data=[]
+    for each_result in results: 
+        data.append(list(each_result))
+    return jsonify(data)
 
 @flask_app.route("/predict", methods = ["POST"])
 def predict():
