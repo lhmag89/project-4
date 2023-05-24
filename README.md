@@ -2,12 +2,12 @@
 ## Background:
 The point of this project is to use the breast cancer data set and create a formula that could potentially help future doctors and to determine whether a tumor is benign or malignant. We are able to do this by processing the data from the Wisconsin breast cancer data set, deducing the important points, and then creating a flask site that would be able to allow users to insert their own data.
 ## Contributors: 
-Antonette Goroch
-Luis Hernandex
-Pooja Rajesekharan
-Anna Remler
-Daniel Rodriguez
-Grace Yoo
+* Antonette Goroch
+* Luis Hernandez
+* Pooja Rajesekharan
+* Anna Remler
+* Daniel Rodriguez
+* Grace Yoo
 ## Introduction:
 There are 2 emerging facts about breast cancer: the first is that 1 in 8 women will be diagnosed with breast cancer in the US and 1 in 3 of those will become metastatic (metavivor) and missed cancer diagnoses are leading contributors to patient harm and malpractice risk (pubmed). This is scary given that breast cancer affects about 13% (about 1 in 8) of U.S. women. (American Cancer Society) Keeping this in mind, we were motivated into making an app using the data Wisconsin Breast Cancer dataset.
 ## Project Overview:
