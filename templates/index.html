@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 	<meta charset="utf-8" />
-	<title> Breast Cancer Machine Learning Classification</title>
+	<title>Predictive Diagnostic Assistant for Breast Cancer Screening</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
@@ -10,8 +10,9 @@
 
     <div class="container">
         <div class="row">
-          <div class="col-md-12 jumbotron text-center">
-            <h1>Breast Cancer Machine Learning Classification</h1>
+          <div class="col-md-12 jumbotron text-center" id="image">
+            <img class="img-responsive" id="image">
+            <h1>Predictive Diagnostic Assistant for Breast Cancer Screening</h1>
           </div>
         </div>
         <div class="row">
@@ -21,12 +22,23 @@
                   <select id="selDatasety" onchange="optionChanged(this.value)"></select>
               </div>
             </div> -->
+          <div class="col-md-12">
+            <div class="well">
+                <h3><b>About the Tool</b></h3>
+                <h4>
+                  Breast cancer is the leading type of cancer globally, accounting for 12.5% of all new annual cancer cases worldwide. In the United States, it is the most commonly diagnosed cancer among women.
+                
+
+                  Our tool is designed to be used by a lab technician to predict whether a patient's tumor cell nuclei can be classified as benign or malignant based on specific feature data inputted. Below is a list of 5 features that were identified through analysis as the most predictive from a diagnostic standpoint.
+                </h4>
+                </div>
+          </div>
           <div class="col-md-8">
             <div class="well">
-                <h3>Features Description</h3>
+                <h3><b>Features Description</b></h3>
                 <ul>
                   <li><strong>concave points_mean: </strong>the average count of the number of points on the nuclear border that lie on an indenation for all nuclei</li>
-                  <li><strong>radius_worst: </strong>the mean averaged length of radial line segments from the center of the nuclear mass to each of the points of the nuclear border for the three largest nuclei</li>
+                  <li><strong>radius_worst : </strong>the mean averaged length of radial line segments from the center of the nuclear mass to each of the points of the nuclear border for the three largest nuclei</li>
                   <li><strong>perimeter_worst: </strong>mean distance around the nuclear border for the largerst three nuclei</li>
                   <li><strong>area_worst: </strong> mean area within the outlined nuclear border for the three largest nuclei</li>
                   <li><strong>concavity_worst: </strong>mean severity of concave portions on the contour for the three largest nuclei</li>
@@ -35,13 +47,19 @@
           </div>
           <div class="col-md-4">
             <div class="well">
+              <h3><b>Input Feature Data</b></h3>
               <form action="{{ url_for('predict')}}"method="post">
-                <input type="text" name="feat1" placeholder="concave points_mean" required="required" />
-                <input type="text" name="feat2" placeholder="radius_worst" required="required" />
-                <input type="text" name="feat3" placeholder="perimeter_worst" required="required" />
-                <input type="text" name="feat4" placeholder="area_worst" required="required" />
-                <input type="text" name="feat5" placeholder="concavity_worst" required="required" />
-                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                <h5>concave points_mean</h5>
+                <input type="text" name="feat1" placeholder="(0, 0.20)" required="required" />
+                <h5>radius_worst </h5>
+                <input type="text" name="feat2" placeholder="(7.93, 36.04)" required="required" />
+                <h5>perimeter_worst</h5>
+                <input type="text" name="feat3" placeholder="(50.41, 251.2)" required="required" />
+                <h5>area_worst</h5>
+                <input type="text" name="feat4" placeholder="(185.2, 4254)" required="required" />
+                <h5>concavity_worst</h5>
+                <input type="text" name="feat5" placeholder="(0, 1.25)" required="required" />
+                <button type="submit" class="btn btn-primary btn-block btn-large" style="background-color:#741B47; border-color:white">Predict</button>
               </form>
               <h4>{{prediction_text}}</h4>
             </div>
